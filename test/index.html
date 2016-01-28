@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>An input challenged page</title>
+		<style type="text/css">
+			input {
+				display: block;
+			}
+			p {
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			The input text elements in this page have all been disabled and mangled in various ways.
+		</p>
+		<p>
+			FixMyInputs should fix all inputs in this page enabling cut / copy / paste etc
+		</p>
+		<br/>
+		<p>
+			Main page form
+		</p>
+		<form>
+			<label for="unpastable">Try to cut / copy / paste</label>
+			<input id="attribute" type="text" onpaste="return false;" />
+			<input id="property" type="text" />
+			<input id="listener" type="text" />
+			<input id="everyWayTilSunday" type="text" oncut="return false;" oncopy="return false;" onpaste="return false;" oncontextmenu="return false;" ondrag="return false;" ondrop="return false;" />
+			<input id="byJquery" type="text" />
+		</form>
+		<br/>
+		<iframe src="./iframedPage.html"></iframe>
+		<br/>
+		<br/>
+		<p>
+			DHTML form
+		</p>
+		<p>
+			<input id="dhtmlFormBtn" type="button" value="Click to create the form"/>
+		</p>
+		<div id="injectionSite"></div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>

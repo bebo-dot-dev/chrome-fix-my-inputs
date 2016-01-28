@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fix My Input Options</title>
+		<style type="text/css">
+			.whiteListCbSection {
+				margin-bottom: 10px;
+			}
+			textarea {
+				width: 450px;
+				height: 300px;
+			}
+			.disabled {
+				opacity: 0.3;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="whiteListCbSection">
+			<label for="whitelistCb">Enable whitelist</label>
+			<input id="whitelistCb" type="checkbox"/>
+		</div>
+		<div id="whitelistSection" class="disabled">
+			<label for="whitelist">Add a whitelisted domain. Domains in the whitelist will be left as-is</label>
+			<br/>
+			<textarea id="whitelist" readonly="readonly"></textarea>
+			<br/>
+		</div>
+
+		<button id="save">
+			Save
+		</button>
+		<button id="close">
+			Close
+		</button>
+		<span id="status"></span>
+
+		<script src="options.js"></script>
+	</body>
+</html>

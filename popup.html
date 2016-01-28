@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Popup menu</title>
+		<style type="text/css">
+			html {
+				width: 150px;
+				height: 50px;
+			}
+			body {
+				margin: 2px;
+			}
+			p {
+				margin: 0;
+			}
+
+			.btn a {
+				text-align: center;
+				text-decoration: none;
+				font: normal 12px Arial, sans-serif, verdana !important;
+				position: relative;
+				-webkit-border-radius: 3;
+				-moz-border-radius: 3;
+				border-radius: 3px;
+				display: block;
+				padding: 3px 17px 3px 17px;
+				margin-bottom: 2px;
+			}
+			.btn.silver a {
+				color: #000000;
+				background: #F2F2F2;
+				background-image: -webkit-linear-gradient(top, #F2F2F2, #DADADA);
+				background-image: -moz-linear-gradient(top, #F2F2F2, #DADADA);
+				background-image: -ms-linear-gradient(top, #F2F2F2, #DADADA);
+				background-image: -o-linear-gradient(top, #F2F2F2, #DADADA);
+				background-image: linear-gradient(to bottom, #F2F2F2, #DADADA);
+				border: solid #C4C4C4 1px;
+			}
+
+			.btn.silver a:hover {
+				background: #F2F2F2;
+			}
+			.btn.silver a:active {
+				background: #DADADA;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<span class="btn silver"><a href="#" id="optionsMenuItem" title="Fix My Input Options..">Options</a></span>
+		</p>
+		<p>
+			<span class="btn silver"><a href="#" id="fixNowMenuItem" title="Fix My Inputs Again">Fix Again Now</a></span>
+		</p>
+		<script src="popup.js"></script>
+	</body>
+</html>
