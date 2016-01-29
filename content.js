@@ -16,6 +16,18 @@ function fixMyInputs() {
 		e.stopImmediatePropagation();
 		return true;
 	};
+	var allowMouseDown = function(e) {
+		e.stopImmediatePropagation();
+		return true;
+	};
+	var allowSelectStart = function(e) {
+		e.stopImmediatePropagation();
+		return true;
+	};
+	var allowDragStart = function(e) {
+		e.stopImmediatePropagation();
+		return true;
+	};
 	var allowDrag = function(e) {
 		e.stopImmediatePropagation();
 		return true;
@@ -29,6 +41,9 @@ function fixMyInputs() {
 	document.addEventListener('copy', allowCopy, true);
 	document.addEventListener('paste', allowPaste, true);
 	document.addEventListener('contextmenu', allowContextMenu, true);
+	document.addEventListener('mousedown', allowMouseDown, true);
+	document.addEventListener('selectstart', allowSelectStart, true);
+	document.addEventListener('dragstart', allowDragStart, true);
 	document.addEventListener('drag', allowDrag, true);
 	document.addEventListener('drop', allowDrop, true);
 }

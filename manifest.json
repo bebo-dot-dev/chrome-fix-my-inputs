@@ -9,7 +9,7 @@
 		"48": "hammer48x48.png",
 		"128": "hammer128x128.png"
 	},
-	"version": "1.0",
+	"version": "1.1",
 	"manifest_version": 2,
 	"description": "Re-enables any disabled oncut / oncopy / onpaste / oncontextmenu / ondrag / ondrop events for all input text elements in web pages",
 	"content_scripts": [
