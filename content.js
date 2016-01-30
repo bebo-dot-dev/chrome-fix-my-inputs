@@ -53,7 +53,7 @@ chrome.storage.sync.get({
 	whitelistEnabled : false,
 	storedWhiteListUrls : ''
 }, function(items) {
-	var inWhiteList = ((items.whitelistEnabled) && (items.storedWhiteListUrls.indexOf(window.location.hostname) > -1));
+	var inWhiteList = ((items.whitelistEnabled) && (items.storedWhiteListUrls.search(new RegExp(window.location.hostname, 'i')) !== -1));
 	if (!inWhiteList || window.location.hostname == '') {
 		//do it
 		fixMyInputs();
