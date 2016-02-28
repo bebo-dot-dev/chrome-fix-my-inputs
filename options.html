@@ -3,8 +3,12 @@
 	<head>
 		<title>Fix My Input Options</title>
 		<style type="text/css">
-			.whiteListCbSection {
+			.whiteListCbSection, .optionalEventsCbSection {
 				margin-bottom: 10px;
+			}
+			.optionalEventsCbSection label {
+				display: inline-block;
+				width: 150px;
 			}
 			textarea {
 				width: 450px;
@@ -25,6 +29,16 @@
 			<br/>
 			<textarea id="whitelist" readonly="readonly"></textarea>
 			<br/>
+		</div>
+		<div class="optionalEventsCbSection">
+			<div>
+				<label for="mousedownCb">Fix onMouseDown events</label>
+				<input id="mousedownCb" type="checkbox"/>
+			</div>
+			<div>
+				<label for="selectstartCb">Fix onSelectStart events</label>
+				<input id="selectstartCb" type="checkbox"/>
+			</div>
 		</div>
 
 		<button id="save">

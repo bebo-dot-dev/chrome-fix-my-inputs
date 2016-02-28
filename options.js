@@ -10,11 +10,17 @@ function enableDisable_Whitelist() {
 }
 
 function save_options() {
+	
 	var whitelistCbChecked = document.getElementById('whitelistCb').checked;
 	var whitelistUrls = document.getElementById('whitelist').value;
+	var mousedownCbChecked = document.getElementById('mousedownCb').checked;
+	var selectstartCbChecked = document.getElementById('selectstartCb').checked;
+	
 	chrome.storage.sync.set({
 		whitelistEnabled : whitelistCbChecked,
-		storedWhiteListUrls : whitelistUrls
+		storedWhiteListUrls : whitelistUrls,
+		mousedownEnabled : mousedownCbChecked,
+		selectstartEnabled : selectstartCbChecked
 	}, function() {
 		var status = document.getElementById('status');
 		status.textContent = 'Options saved.';
@@ -27,11 +33,15 @@ function save_options() {
 function restore_options() {
 	chrome.storage.sync.get({
 		whitelistEnabled : false,
-		storedWhiteListUrls : 'someIgnoredUrl.com;anotherIgnoredUrl.com'
-	}, function(items) {
-		document.getElementById('whitelistCb').checked = items.whitelistEnabled;
+		storedWhiteListUrls : 'someIgnoredUrl.com;anotherIgnoredUrl.com',
+		mousedownEnabled : false,
+		selectstartEnabled : false
+	}, function(config) {
+		document.getElementById('whitelistCb').checked = config.whitelistEnabled;
 		enableDisable_Whitelist();
-		document.getElementById('whitelist').value = items.storedWhiteListUrls;
+		document.getElementById('whitelist').value = config.storedWhiteListUrls;
+		document.getElementById('mousedownCb').checked = config.mousedownEnabled;
+		document.getElementById('selectstartCb').checked = config.selectstartEnabled;
 	});
 }
 
